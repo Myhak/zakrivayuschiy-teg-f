@@ -106,8 +106,8 @@
   font-size: var(--accent-font-size);
   opacity: 50%;
   mix-blend-mode: hard-light;
-  inset-inline-end: 10px;
-  inset-block-start: 17px;
+  inset-inline-end: 25px;
+  inset-block-start: 21px;
   z-index: 1;
 }
 
@@ -386,6 +386,11 @@ svg {
 
   .card:not(:last-child) {
     height: clamp(1rem, -13.8552rem + 33.1034vw, 4rem);
+  }
+
+  .watermark {
+    inset-inline-end: 10px;
+    inset-block-start: 17px;
   }
 
   .button_type_save {
