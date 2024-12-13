@@ -69,10 +69,6 @@
   inline-size: var(--inline-size);
 }
 
-.card:not(:last-child) {
-  block-size: clamp(1rem, -67.5000rem + 114.2857vw, 4rem);
-}
-
 .list-item {
   display: flex;
   flex-direction: column;
@@ -93,7 +89,6 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   position: relative;
   border-bottom: var(--border);
   border-top: var(--border);
@@ -186,12 +181,12 @@
   background-color: var(--bg-color);
   cursor: pointer;
   overflow: hidden;
+  transition: 0.3s ease;
 }
 
 .button:focus-visible {
   outline: none;
   box-shadow: var(--box-shadow);
-  transition: box-shadow 0.5s ease;
 }
 
 .button::after {
@@ -263,6 +258,7 @@
 
 .button__dialog {
   inline-size: 100%;
+  text-transform: uppercase;
 }
 
 .card__icon-button {
@@ -271,108 +267,37 @@
   padding: 0;
   width: 39px;
   height: 36px;
+  transition: 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card__icon-button:focus-visible {
   outline: none;
   border: var(--border);
-  transition: 0.3s ease;
 } 
 
 .core {
   fill: transparent;
+  transition: 0.3s linear 0.3s;
 }
 
 .sparks {
   fill: transparent;
 }
 
+.main-body {
+  fill: transparent;
+  transition: 0.3s linear;
+}
+
+.contour {
+  transition: 0.1s linear;
+}
+
 svg {
   fill: black;
-}
-
-.like-icon.is-liked .heart {
-  animation: change-size 0.3s 0.1s ease-in;
-}
-
-.like-icon .main-body {
-  transition: fill 0.3s linear;
-  fill: transparent;
-}
-
-.like-icon:hover .main-body {
-  fill: black;
-  transition: fill 0.3s 0.05s linear;
-}
-
-.like-icon:active .main-body {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s 0.05s linear;
-}
-
-.like-icon.is-liked .main-body {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s 0.05s linear;
-}
-
-.like-icon .contour {
-  fill: black;
-  transition: fill 0.1s linear;
-}
-
-.like-icon.is-liked .contour {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s 0.06s linear;
-}
-
-.like-icon .core {
-  fill: transparent;
-  transition: fill 0.3s 0.03s linear;
-}
-
-.like-icon:hover .core {
-  fill: black;
-  transition: fill 0.3s 0.03s linear;
-}
-
-.like-icon:active .core {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s 0.03s linear;
-}
-
-
-.like-icon.is-liked .core {
-  fill: var(--animation-fill-color);
-  transition: fill 0.3s 0.03s linear;
-}
-
-.like-icon .sparks {
-  opacity: 0;
-}
-
-.like-icon.is-liked .sparks {
-  fill: var(--animation-fill-color);
-  animation: change-opacity 0.3s 0.3s ease-in;
-}
-
-@keyframes change-opacity {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 100%;
-  }
-} 
-
-@keyframes change-size {
-  from {
-    transform: scale(1);
-  }
-
-  to {
-    transform: scale(1.25);
-  }
 }
 
 @media (width <= 375px) {
@@ -382,10 +307,6 @@ svg {
 
   .card {
     inline-size: 100%;
-  }
-
-  .card:not(:last-child) {
-    height: clamp(1rem, -13.8552rem + 33.1034vw, 4rem);
   }
 
   .watermark {
